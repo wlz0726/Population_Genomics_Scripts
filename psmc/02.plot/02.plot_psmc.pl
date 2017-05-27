@@ -1,3 +1,8 @@
+#!/usr/bin/perl -w
+# lizhong
+# v0.2
+# 2017.5.16
+
 my @f=@ARGV;
 die "$0 outprefix 1.psmc 2.psmc ...
 # change the gnuplot path of 'plot_psmc_MAR_SAT_SL.pl' first
@@ -5,16 +10,20 @@ die "$0 outprefix 1.psmc 2.psmc ...
 \n"unless @ARGV;
 my @out;
 my $out=shift(@f);
-print "cat ";
+
+open(O,"> $0.$out.sh");
+print O "cat ";
 for my $f(@f){
     $f =~/(.+)\.psmc/;
     my $id=$1;
-    print " $f";
+    print O " $f";
     push(@out,"$id");
 }
-print "> aa;\n";
-print "
-perl plot_psmc_MAR_SAT_SL.pl -M \"",join(",",@out),"\" -u 9.796e-9 -g 5 -x 10000 -X 10000000 -Y 400000 $out aa;
-rm $out*txt $out*par *eps *epss aa* *Good;\n\n";
+print O "> aa;\n";
+print O "
+perl plot_psmc_MAR_SAT_SL.pl -M \"",join(",",@out),"\" -u 7.5e-9 -g 3 -x 10000 -X 10000000 -Y 500000 $out aa;
+rm $out $out*txt $out*par *eps  aa* *Good;\n\n";
+close O;
 
 
+`sh $0.$out.sh`;

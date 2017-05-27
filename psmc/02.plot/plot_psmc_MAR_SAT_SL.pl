@@ -1,4 +1,7 @@
 #!/usr/bin/perl -w
+# lizhong
+# v0.2
+# 2017.5.16
 
 # Author: lh3
 
@@ -197,34 +200,39 @@ set xlab "Years (g=$opts{g}, {/Symbol m}=$ylab_aux)" $afont;
   set style line 101 lt 0 lc rgb "grey" $lw;
   set style line 102 lt 0 lc rgb "black" $lw;
 
-  set output "$prefix.epss" ;
+  set output "$prefix" ;
   plot );
   if ( $opts{M}) {
-          my @titles = split(/[,;]/, $opts{M});
-          for (0 .. $#titles) {
-                  $titles[$_] =~ s/=([^\s=*:@]+)/[$1]/;
-                  $titles[$_] =~ s/\@([^\s=*:@]+)/\(\{\/Symbol a\}=$1\)/;
-          }
-          print $fh qq("$prefix.0.txt" u 1:2 t "$titles[0]" w st ls 1);
-	  foreach my $i (1 .. $#data) {
-              print $fh qq(,"$prefix.$i.txt" u 1:2 t "$titles[$i]" w st ls $i + 1);
-          }
-          print $fh qq(,"bintanja2008.txt.nohead.tab.SurfaceTemp.txt" u 1:2 t "SAT" w st ls 101 axes x1y2);
-	  print $fh qq(,"bintanja2008.txt.nohead.tab.SeaLevl.txt" u 1:2 t "GSL" w st ls 100 axes x1y2);
-	  print $fh qq(,"2005_mar.txt" u 1:2 t "MAR" w st ls 102 axes x1y2;\n);
-      } else {
-          foreach my $i (1 .. @data-1) { print $fh qq("$prefix.$i.txt" u 1:2 w  st ls 2 ,) }
-          print $fh qq("$prefix.0.txt" u 1:2 t "popsize" w st ls 1);
-          print $fh qq(;\n);   
+      my @titles = split(/[,;]/, $opts{M});
+      print $fh qq("bintanja2008.txt.nohead.tab.SurfaceTemp.txt" u 1:2 t "SAT" w st ls 101 axes x1y2);
+      print $fh qq(,"bintanja2008.txt.nohead.tab.SeaLevl.txt" u 1:2 t "GSL" w st ls 100 axes x1y2);
+      print $fh qq(,"2005_mar.txt" u 1:2 t "MAR" w st ls 102 axes x1y2 );
+      
+      for (0 .. $#titles) {
+	  $titles[$_] =~ s/=([^\s=*:@]+)/[$1]/;
+	  $titles[$_] =~ s/\@([^\s=*:@]+)/\(\{\/Symbol a\}=$1\)/;
       }
-  
-  close($fh);
-
-  if (defined $opts{p}) {
-          system("epstopdf $prefix.eps");
+      print $fh qq(,"$prefix.0.txt" u 1:2 t "$titles[0]" w st ls 1);
+      foreach my $i (1 .. $#data) {
+	  print $fh qq(,"$prefix.$i.txt" u 1:2 t "$titles[$i]" w st ls $i + 1);
+      }
+      print $fh "\n";
+      #print $fh qq(,"bintanja2008.txt.nohead.tab.SurfaceTemp.txt" u 1:2 t "SAT" w st ls 101 axes x1y2);
+      #print $fh qq(,"bintanja2008.txt.nohead.tab.SeaLevl.txt" u 1:2 t "GSL" w st ls 100 axes x1y2);
+      #print $fh qq(,"2005_mar.txt" u 1:2 t "MAR" w st ls 102 axes x1y2;\n);
+  } else {
+      foreach my $i (1 .. @data-1) { print $fh qq("$prefix.$i.txt" u 1:2 w  st ls 2 ,) }
+      print $fh qq("$prefix.0.txt" u 1:2 t "popsize" w st ls 1);
+      print $fh qq(;\n);   
   }
 
-    system ("convert  $prefix.epss  $prefix.epss.pdf  ") ;
+close($fh);
+
+if (defined $opts{p}) {
+    system("epstopdf $prefix.eps");
+}
+
+    system ("convert  $prefix  $prefix.pdf  ") ;
 # remove files
 
 #  unless (defined($opts{R})) {
