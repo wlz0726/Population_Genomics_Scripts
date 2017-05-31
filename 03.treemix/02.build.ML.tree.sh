@@ -1,0 +1,3 @@
+/home/wanglizhong/software/treemix/treemix-1.12/src/treemix -i treemix.input.gz -k 1 -o 02.ML.tree -root AF-YRI,AF-LWK,AF-GWD,AF-MSL,AF-ESN,AF-ASW,AF-ACB ; /ifshk4/BC_PUB/biosoft/PIPE_RD/Package/R-3.1.1/bin/Rscript plot.R 02.ML.tree
+/home/wanglizhong/software/treemix/treemix-1.12/src/treemix -i treemix.input.gz -k 500 -o 02.ML.tree.k500 -root AF-YRI,AF-LWK,AF-GWD,AF-MSL,AF-ESN,AF-ASW,AF-ACB ; /ifshk4/BC_PUB/biosoft/PIPE_RD/Package/R-3.1.1/bin/Rscript plot.R 02.ML.tree.k500
+/home/wanglizhong/software/treemix/treemix-1.12/src/treemix -i treemix.input.gz -k 1000 -o 02.ML.tree.k1000 -root AF-YRI,AF-LWK,AF-GWD,AF-MSL,AF-ESN,AF-ASW,AF-ACB ; /ifshk4/BC_PUB/biosoft/PIPE_RD/Package/R-3.1.1/bin/Rscript plot.R 02.ML.tree.k1000
