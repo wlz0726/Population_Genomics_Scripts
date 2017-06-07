@@ -4,7 +4,6 @@
 # need:
 # 1. input.tped input.tmap
 # 2. *.plinklist with sub-individuals list in format: Pop_ID Sample_ID
-# 3. *.plinklist.pop with list cotain all the Pop_ID in *.plinklist, one pop per line
 
 my $prefix="input"; #prefix of input.tped input.tfam
 
