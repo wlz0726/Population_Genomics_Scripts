@@ -30,6 +30,7 @@ F3=<(c-a)(c-b)>
 Here, `<>` denotes the average over all genotyped sites, and `a`, `b` and `c` denote the allele frequency in the three populations. 
 Outgroup F3 statistics measure the amount of _shared genetic drift between two populations from a common ancestor. 
 In a phylogenetic tree connecting A, B and C, Outgroup F3 statistics measure the common branch length from the outgroup, here indicated in red:
+
 ![image](http://ofr9vioug.bkt.clouddn.com/QQ20170607-151827@2x.png?imageView/2/w/500)
 
 For computing F3 statistics including error bars, we will use the `qp3Pop` program from Admixtools. 
@@ -76,6 +77,22 @@ and run it via
 ```
 qp3Pop -p $PARAMETER_FILE > $OUT
 ```
+
+```
+grep 'result:' *.qp3Pop.out > *.qp3Pop.out.txt
+```
+plot results like this:
+
+![image](http://ofr9vioug.bkt.clouddn.com/QQ20170607-154821.png?imageView/2/w/500)
+
+with r script:
+```
+library(ggplot2)
+a1=read.table("3pop.Nu-OT-YRI.par.log.result.NU.txt",header=F)
+ggplot(a1,aes(x=reorder(V3,V5), y=V5))+geom_point(stat = "identity")+coord_flip()+geom_pointrange(aes(ymin=V5-3*V6,ymax=V5+3*V6))+xlab(" ")+ylab("f3(NU,OT;YRI)")+theme_bw()+theme(panel.grid =element_blank(),axis.title=element_text(size=12,color="black"),axis.text=element_text(size=10,color="black"),panel.border=element_rect(colour="black",size=1))
+```
+
+
 
 ## Analysing individual samples
 Change the ind.txt file, manually assigned each of my individuals its , which is simply called the same as the individual.
