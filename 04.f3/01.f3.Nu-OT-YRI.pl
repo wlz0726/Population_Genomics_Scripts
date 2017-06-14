@@ -5,8 +5,8 @@
 # Other Tibetan-Yi pops (OT)
 
 # ============ define the pops
-my @pop1=("ZY-NU","ZY-DRU","ZY-MBA","ZY-LBA");# unadmix pop: NU
-my @pop2=("ZY-ACH","ZY-BAI","ZY-DRU","ZY-HAN","ZY-HNI","ZY-HUI","ZY-JNO","ZY-JPO","ZY-LBA","ZY-LHU","ZY-LSU","ZY-MBA","ZY-MON","ZY-NAX","ZY-NU","ZY-PMI","ZY-QIA","ZY-TIB","ZY-UN","ZY-UYG","ZY-YI"); # all zangyi pop
+my @pop1=("TY-NU","TY-DRU","TY-MBA","TY-LBA","TY-TIB-W04","TY-TIB-W07","EA-CDX");# unadmix pop: NU
+my @pop2=("TY-ACH","TY-BAI","TY-DRU","TY-HAN","TY-HNI","TY-HUI","TY-JNO","TY-JPO","TY-LBA","TY-LHU","TY-LSU","TY-MBA","TY-MON","TY-NAX","TY-NU","TY-PMI","TY-QIA","TY-UYG","TY-YI","TY-TIB-W01","TY-TIB-M04","TY-TIB-W02","TY-TIB-W04","TY-TIB-W07","TY-TIB-W09","EA-CDX","EA-CHB","EA-CHS","EA-JPT"); # all zangyi pop + CDX, CHB, CHS
 my @pop3=("AF-YRI"); # outgroup
 # ============
 
@@ -35,5 +35,5 @@ popfilename:  $0.list
 close O2;
 
 open(O3,"> $0.sh");
-print O3 "/home/wanglizhong/software/admixtools/AdmixTools/bin/qp3Pop $0.par > $0.par.log; \n";
+print O3 "/home/wanglizhong/software/admixtools/AdmixTools/bin/qp3Pop -p $0.par > $0.par.log; \n";
 close O3;

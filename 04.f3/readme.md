@@ -7,6 +7,7 @@ If C is unadmixed, then f3 (C ; A, B) has non-negative mean.
 If f3 (C ; A, B) has negative mean, in contrast, this implies that C is admixed with populations 
 close to A and B (check the significance of the f3 mean and Z-score).
 
+[more](https://github.com/DReichLab/AdmixTools/blob/master/README.3PopTest)
 
 
 # Outgroup F3 Statistics

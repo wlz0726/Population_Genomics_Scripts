@@ -2,10 +2,10 @@
 use strict;
 use warnings;
 
-# v0.2 
+# v0.3
 # PSMC script
 # created by wanglizhong
-# 2017.5.10
+# 2017.6.14
 
 my $bamlist="00.dep.pl.txt"; # each bam per line with four cols:Pop_name Sample_name Mean_Depth Bam_Path; Mean_Depth Bam_Path is unnecessary, can be replaced by '-'
 die "$0 bamlist\n"unless $bamlist;
@@ -22,10 +22,10 @@ my $fq2psmcfa="/home/wanglizhong/software/psmc/psmc-0.6.5/utils/fq2psmcfa";
 my $psmc="/home/wanglizhong/software/psmc/psmc-0.6.5/psmc";
 my $vcfutils="/ifshk4/BC_PUB/biosoft/PIPE_RD/Package/samtools-0.1.19/bcftools/vcfutils.pl";
 my $splitfa="/home/wanglizhong/software/psmc/psmc-0.6.5/utils/splitfa";
+# Note:
+# change the method below before you use: # Three ways to get SNP info
 #==============================================================
-# v0.2
-# created by wanglizhong
-# 2017.5.10
+
 my $out="$0.out";
 `mkdir $out`;
 
@@ -59,7 +59,7 @@ while(<F>){
 	# Method 2: based on unphased SNPs obtained with population data
 	# my $vcf="/ifshk5/PC_HUMAN_EU/USER/zhuwenjuan/work/Cattle/step1.data/SNP/final.gatk.snp.Chr$i.VQSR.vcf.gz";
 	
-	# Method 3: based on phase SNPs; perfect for samples with low depth (<20x)
+	# Method 3: based on phased SNPs; perfect for samples with low depth (<20x) in a relative large population;
 	my $vcf="$vcfdir/chr$i.recode.vcf.gz";
 	print O1 "$vcftools --gzvcf $vcf --indv $id --recode -c|gzip -c >  $prefix.Chr$i.vcf.gz; ";
 	print O1 "$vcf2fq $ref $prefix.Chr$i.vcf.gz chr$i |gzip -c > $prefix.Chr$i.fq.gz; $fq2psmcfa -q20 $prefix.Chr$i.fq.gz > $prefix.Chr$i.psmcfa; \n";
