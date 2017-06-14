@@ -1,8 +1,3 @@
-#!/usr/bin/perl -w
-# lizhong
-# v0.2
-# 2017.5.16
-
 my @f=@ARGV;
 die "$0 outprefix 1.psmc 2.psmc ...
 # change the gnuplot path of 'plot_psmc_MAR_SAT_SL.pl' first

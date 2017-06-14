@@ -1,7 +1,4 @@
 #!/usr/bin/perl -w
-# lizhong
-# v0.2
-# 2017.5.16
 
 # Author: lh3
 
@@ -182,7 +179,8 @@ set xlab "Years (g=$opts{g}, {/Symbol m}=$ylab_aux)" $afont;
   set y2tics 
   set ylab "Effective population size (x10^4)" $afont;
   set y2ran [-18:50]
-  set y2label "Surface air temperature({/Symbol \260}C) \\n or global sea level(m) \\n or MAR (g/cm^3/1,000 years)" $afont rotate by 270 offset 1,0;
+  #set y2label "Surface air temperature({/Symbol \260}C) \\n or global sea level(m) \\n or MAR (g/cm^3/1,000 years)" $afont rotate by 270 offset 1,0;
+  set y2label "SAT({/Symbol \260}C) or GSL(m) or MAR (g/cm^3/1,000 years)" $afont rotate by 270 offset 1,0;
   set out "$prefix.eps";
   set style line 1 lt 1 lc rgb "#FF0000" $lw;
   set style line 2 lt 2 lc rgb "#B8860B" $lw;
