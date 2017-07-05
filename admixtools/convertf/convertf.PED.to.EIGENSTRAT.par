@@ -1,0 +1,9 @@
+genotypename:    input.plinkfile.ped
+snpname:         input.plinkfile.map
+indivname:       input.plinkfile.ped
+outputformat:    EIGENSTRAT
+genotypeoutname: input.EIGENSTRAT.geno
+snpoutname:      input.EIGENSTRAT.snp
+indivoutname:    input.EIGENSTRAT.ind
+familynames:     NO
+numchrom: 22

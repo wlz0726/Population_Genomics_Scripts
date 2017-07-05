@@ -1,0 +1,9 @@
+DIR:  .
+SSS:  input
+genotypename:    DIR/SSS.geno
+snpname:         DIR/SSS.snp
+indivname:       DIR/SSS.ind
+outputformat:    PED
+genotypeoutname: DIR/SSS.ped
+snpoutname:      DIR/SSS.map
+indivoutname:    DIR/SSS.pedind

@@ -1,0 +1,2 @@
+cat ../01.CNV.calling/B.del.bed ../01.CNV.calling/B.dup.bed | awk '{print $1,"length",$3-$2+1}' > B.all.bed; perl hist.pl B.all.bed V3
+cat ../01.CNV.calling/C.del.bed ../01.CNV.calling/C.dup.bed | awk '{print $1,"length",$3-$2+1}' > C.all.bed; perl hist.pl C.all.bed V3
