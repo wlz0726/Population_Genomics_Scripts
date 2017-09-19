@@ -7,8 +7,7 @@
 # ============ define the pops
 my @pop1=("TY-NU","TY-DRU","TY-MBA","TY-LBA","TY-TIB-W04","TY-TIB-W07","EA-CDX");# unadmix pop: NU
 my @pop2=("TY-ACH","TY-BAI","TY-DRU","TY-HAN","TY-HNI","TY-HUI","TY-JNO","TY-JPO","TY-LBA","TY-LHU","TY-LSU","TY-MBA","TY-MON","TY-NAX","TY-NU","TY-PMI","TY-QIA","TY-UYG","TY-YI","TY-TIB-W01","TY-TIB-M04","TY-TIB-W02","TY-TIB-W04","TY-TIB-W07","TY-TIB-W09","EA-CDX","EA-CHB","EA-CHS","EA-JPT"); # all zangyi pop + CDX, CHB, CHS
-# outgroup or target pop
-my @pop3=("AF-YRI"); # outgroup or target pop
+my @pop3=("AF-YRI"); # outgroup
 # ============
 
 open(O1,"> $0.list");

@@ -31,6 +31,10 @@ indivname:    $dir2/input.pedind
 evecoutname:  $dir2/PCAout.evec
 evaloutname:  $dir2/PCAout.eigenvalues
 
+# infer eigenvectors using only individuals from a subset of populations,
+# poplistname: pick.poplist
+
+
 # optional parameters
 numoutevec:      4
 numoutlieriter:  0
@@ -41,6 +45,11 @@ qtmode:             0
 
 # Multi-threading parameters
 numthreads: 10
+
+#  output file containing an **fst matrix** which can be used as input
+#  to programs in the PHYLIP package, such as the 'fitch' program for
+#  constructing phylogenetic trees.
+phylipoutname: $dir2/PCAout.PHYLIP
 
 # output EIGENSTRAT files
 outputformat:      EIGENSTRAT
