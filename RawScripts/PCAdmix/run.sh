@@ -1,0 +1,1 @@
+/home/wanglizhong/bin/PCAdmix3_linux -anc 01.vcf2beagle.pl.out/BRM/22.bgl 01.vcf2beagle.pl.out/LQC/22.bgl 01.vcf2beagle.pl.out/JBC/22.bgl 01.vcf2beagle.pl.out/RAN/22.bgl -adm 01.vcf2beagle.pl.out/QCC/22.bgl -o outprefix -bed -lab BRM LQC JBC RAN QCC
