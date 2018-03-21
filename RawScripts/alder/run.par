@@ -1,0 +1,9 @@
+genotypename: input.EIGENSTRAT.geno
+snpname:      input.EIGENSTRAT.snp
+indivname:    input.EIGENSTRAT.ind
+admixpop:     QCC
+refpops:      BRM;GIR;NEL;FLV;HOL;JBC;JER;LIM;RAN
+jackknife:    YES
+print_jackknife_fits: YES
+chrom:        1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22
+num_threads:  10

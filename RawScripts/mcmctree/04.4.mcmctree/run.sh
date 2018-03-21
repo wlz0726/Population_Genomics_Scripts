@@ -1,0 +1,2 @@
+perl /ifshk4/BC_PUB/biosoft/pipe/bc_ba/Evolution/Plant/04_Diver_time_v1.1/bin/run_mcmctree.pl ./in.phy.exon ./in.tree --desc in.desc --outdir mcmc.outdir.exon --rootage 8 --alpha 0 --nsample 200000 --burnin 20000
+perl /ifshk4/BC_PUB/biosoft/pipe/bc_ba/Evolution/Plant/04_Diver_time_v1.1/bin/run_mcmctree.pl ./in.phy.syn ./in.tree --desc in.desc --outdir mcmc.outdir.syn --rootage 8 --alpha 0 --nsample 200000 --burnin 20000

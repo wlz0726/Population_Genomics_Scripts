@@ -1,0 +1,1 @@
+/ifshk5/PC_HUMAN_EU/USER/wanglizhong/software/alder/alder/alder -p run.par > run.par.log

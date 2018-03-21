@@ -1,0 +1,8 @@
+DIR:          .
+SSS:          input.EIGENSTRAT
+indivname:    input.EIGENSTRAT.ind
+snpname:      input.EIGENSTRAT.snp
+genotypename: input.EIGENSTRAT.geno
+popfilename:  poplist
+printsd:  YES
+numchrom:         29

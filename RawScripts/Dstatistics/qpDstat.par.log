@@ -1,0 +1,23 @@
+parameter file: qpDstat.par
+### THE INPUT PARAMETERS
+##PARAMETER NAME: VALUE
+DIR: .
+SSS: input.EIGENSTRAT
+indivname: input.EIGENSTRAT.ind
+snpname: input.EIGENSTRAT.snp
+genotypename: input.EIGENSTRAT.geno
+popfilename: poplist
+printsd: YES
+numchrom: 29
+## qpDstat version: 662
+number of quadruples 1
+  0                  YAK    1
+  1                  YNC    2
+  2                  BRM    2
+  3                  LQC    2
+jackknife block size:     0.050
+snps: 2169405  indivs: 7
+number of blocks for jackknife: 518
+nrows, ncols: 7 2169405
+result:        YAK        YNC        BRM        LQC      0.0036     0.004134     0.862 16800  16680 2169405 
+## end of run
